@@ -12,20 +12,23 @@ public class DecimalToBinary {
     private static String temp;
 
     public static void main(String[] args) {
+
+        int decimal;
+
         if (args.length == 0) {
             System.out.println("Please enter any decimal number: ");
 
             try (Scanner scanner = new Scanner(System.in);) {
-                int decimal = scanner.nextInt();
+                decimal = scanner.nextInt();
 
                 convertDecimalToBinary(decimal);
-                outputResult(temp);
+                outputResult(temp, decimal);
             }
         } else {
-            int i = Integer.parseInt(args[0]);
+            decimal = Integer.parseInt(args[0]);
 
-            convertDecimalToBinary(i);
-            outputResult(temp);
+            convertDecimalToBinary(decimal);
+            outputResult(temp, decimal);
         }
     }
 
@@ -37,11 +40,11 @@ public class DecimalToBinary {
             temp = quotient + temp;
             number = number / 2;
         }
-        return DecimalToBinary.temp;
+        return temp;
     }
 
-    private static void outputResult(String temp) {
+    private static void outputResult(String temp, int number) {
         DecimalToBinary.temp = temp;
-        System.out.println("Number was converted to the binary number of: " + DecimalToBinary.temp);
+        System.out.println("Number '" + number + "' was converted to the binary number of: '" + DecimalToBinary.temp + "'");
     }
 }

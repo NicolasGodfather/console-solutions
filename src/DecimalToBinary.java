@@ -20,16 +20,12 @@ public class DecimalToBinary {
 
             try (Scanner scanner = new Scanner(System.in);) {
                 decimal = scanner.nextInt();
-
-                convertDecimalToBinary(decimal);
-                outputResult(temp, decimal);
             }
         } else {
             decimal = Integer.parseInt(args[0]);
-
-            convertDecimalToBinary(decimal);
-            outputResult(temp, decimal);
         }
+        convertDecimalToBinary(decimal);
+        outputResult(temp, decimal);
     }
 
     private static String convertDecimalToBinary(int number) {
